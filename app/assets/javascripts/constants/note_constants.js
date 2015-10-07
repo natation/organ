@@ -1,0 +1,4 @@
+var NoteConstants = {
+  CREATE_NOTE: 'CREATE_NOTE',
+  DESTROY_NOTE: 'DESTROY_NOTE'
+};
