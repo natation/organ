@@ -1,16 +1,16 @@
+/* global KeyActions */
+
 (function(root) {
   'use strict';
-  var KeyListener = root.KeyListener = React.createClass({
-    handleKeyDown: function (e) {
-      KeyActions.keyPressed(e.key);
-    },
-    handleKeyUp: function (e) {
-      KeyActions.keyUnpressed(e.key);
-    },
-    render: function () {
-      React.createElement(div, {className: "key-listener",
-                                onKeyDown: this.handleKeyDown,
-                                onKeyUp: this.handleKeyUp})
-    }
-  });
+
+  var handleKeyDown = function (e) {
+    KeyActions.keyPressed(e.key);
+  };
+
+  var handleKeyUp = function (e) {
+    KeyActions.keyUnpressed(e.key);
+  };
+
+  $(document).keydown(handleKeyDown);
+  $(document).keyup(handleKeyUp);
 }(this));

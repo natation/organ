@@ -1,3 +1,5 @@
+/* global EventEmitter, StoreConstants, AppDispatcher, NoteConstants */
+
 (function(root) {
   'use strict';
   var _notes = [];
@@ -9,12 +11,14 @@
 
     createNote: function (note) {
       _notes.push(note);
+      NoteStore.changed();
     },
 
     destroyNote: function (note) {
       var noteIdx = _notes.indexOf(note);
       if (noteIdx !== -1) {
         _notes.splice(noteIdx, 1);
+        NoteStore.changed();
       }
     },
 
@@ -38,8 +42,6 @@
         case NoteConstants.DESTROY_NOTE:
           this.destroyNote(action.noteName);
           break;
-        default:
-          alert("Uh oh");
       }
     })
   });
