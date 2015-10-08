@@ -10,8 +10,11 @@
     },
 
     createNote: function (note) {
-      _notes.push(note);
-      NoteStore.changed();
+      var noteIdx = _notes.indexOf(note);
+      if (noteIdx === -1) {
+        _notes.push(note);
+        NoteStore.changed();
+      }
     },
 
     destroyNote: function (note) {
@@ -37,10 +40,10 @@
     dispatchId: AppDispatcher.register(function (action) {
       switch (action.actionType) {
         case NoteConstants.CREATE_NOTE:
-          this.createNote(action.noteName);
+          NoteStore.createNote(action.noteName);
           break;
         case NoteConstants.DESTROY_NOTE:
-          this.destroyNote(action.noteName);
+          NoteStore.destroyNote(action.noteName);
           break;
       }
     })

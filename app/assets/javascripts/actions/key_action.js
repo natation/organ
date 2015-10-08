@@ -20,30 +20,38 @@
 
     _findNote: function(key) {
       switch (key) {
-        case 'a':
+        case 'q':
           return 'A';
-        case 'w':
+        case '2':
           return 'Bb';
-        case 's':
+        case 'w':
           return 'B';
-        case 'd':
+        case 'e':
           return 'C';
-        case 'r':
+        case '4':
           return 'Db';
-        case 'f':
+        case 'r':
           return 'D';
-        case 't':
+        case '5':
           return 'Eb';
-        case 'g':
-          return 'F';
+        case 't':
+          return 'E';
         case 'y':
+          return 'F';
+        case '7':
           return 'Gb';
-        case 'h':
-          return 'G';
         case 'u':
+          return 'G';
+        case '8':
           return 'Ab';
-        case 'j':
+        case 'i':
           return 'A2';
+        case '9':
+          return 'Bb2';
+        case 'o':
+          return 'B2';
+        case 'p':
+          return 'C2';
         default:
           return '';
       }

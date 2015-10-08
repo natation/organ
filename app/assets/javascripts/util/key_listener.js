@@ -4,11 +4,11 @@
   'use strict';
 
   var handleKeyDown = function (e) {
-    KeyActions.keyPressed(e.key);
+    KeyActions.keyPressed(String.fromCharCode(e.keyCode).toLowerCase());
   };
 
   var handleKeyUp = function (e) {
-    KeyActions.keyUnpressed(e.key);
+    KeyActions.keyUnpressed(String.fromCharCode(e.keyCode).toLowerCase());
   };
 
   $(document).keydown(handleKeyDown);
