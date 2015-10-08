@@ -27,7 +27,7 @@
   };
 
   Note.prototype.start = function () {
-    this.gainNode.gain.value = 0.6;
+    this.gainNode.gain.value = 0.3;
   };
 
   Note.prototype.stop = function () {

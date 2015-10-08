@@ -10,6 +10,10 @@
       );
     },
 
+    getInitialState: function () {
+      return {pressed: false};
+    },
+
     handlePress: function (noteName) {
       var noteIdx = NoteStore.all().indexOf(noteName);
       if (noteIdx === -1) {
@@ -17,6 +21,10 @@
       } else {
         this.note.start();
       }
+    },
+
+    toggleClass: function () {
+      React.setState({pressed: !this.state.pressed});
     },
 
     render: function () {

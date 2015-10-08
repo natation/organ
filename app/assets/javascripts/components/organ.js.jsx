@@ -6,13 +6,13 @@
     render: function () {
       var keyNames = Object.keys(TONES);
       return (
-        <ul className="organ">
+        <div className="organ">
           {
             keyNames.map(function (keyName) {
-              return <li><KeyNote noteName={keyName} key={TONES[keyName]}/></li>;
+              return <KeyNote noteName={keyName} key={TONES[keyName]}/>;
             })
           }
-        </ul>
+        </div>
       );
     }
   });
