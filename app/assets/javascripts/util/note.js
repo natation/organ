@@ -7,7 +7,7 @@
   var Note = root.Note = function(frequency) {
     var createOscillator = function (freq) {
       var osc = ctx.createOscillator();
-      osc.type = "sine";
+      osc.type = "sawtooth";
       osc.frequency.value = freq;
       osc.detune.value = 0;
       osc.start(ctx.currentTime);
@@ -27,7 +27,7 @@
   };
 
   Note.prototype.start = function () {
-    this.gainNode.gain.value = 0.3;
+    this.gainNode.gain.value = 0.6;
   };
 
   Note.prototype.stop = function () {
